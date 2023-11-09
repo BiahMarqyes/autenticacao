@@ -9,18 +9,6 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
   styleUrls: ['./logincli.page.scss'],
 })
 
-const auth = getAuth();
-createUserWithEmailAndPassword(auth, email, senha)
-  .then((userCredential) => {
-    // Signed in
-    const user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // ..
-  });
 
 export class LogincliPage implements OnInit {
 
