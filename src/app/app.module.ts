@@ -9,11 +9,11 @@ import { AppComponent } from './app.component';
 
 import { AngularFireModule } from '@angular/fire/compat';
 
-import { initializeApp } from 'firebase/app';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, ReactiveFormsModule, FormsModule,
     AngularFireModule.initializeApp(
       {
         apiKey: "AIzaSyBirNVB38jTM4BvzoXvs2JRmoqPehnNZQo",
@@ -30,4 +30,4 @@ import { initializeApp } from 'firebase/app';
 })
 export class AppModule {}
 
-const app = initializeApp();
+
