@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { initializeApp } from "firebase/app";
 import { getDatabase, set, ref } from "firebase/database";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBirNVB38jTM4BvzoXvs2JRmoqPehnNZQo",
@@ -21,49 +21,59 @@ const db = getDatabase();
 const auth = getAuth(app);
 
 @Component({
-  selector: 'app-logincli',
-  templateUrl: './logincli.page.html',
-  styleUrls: ['./logincli.page.scss'],
+  selector: 'app-regiscli',
+  templateUrl: './regiscli.page.html',
+  styleUrls: ['./regiscli.page.scss'],
 })
 
+export class RegiscliPage implements OnInit {
 
-export class LogincliPage implements OnInit {
-
-  formLogin: FormGroup;
+  formRegistro: FormGroup;
 
   mensagens = {
+    nome: [
+      { tipo: 'required', mensagem: 'O campo Nome de Usuário é obrigatório.' },
+      { tipo: 'minlength', mensagem: 'O Nome de Usuário deve ter pelo menos 3 caracteres.' },
+    ],
     email: [
       { tipo: 'required', mensagem: 'O campo Email é obrigatório.' },
       { tipo: 'email', mensagem: 'Email Inválido.' },
     ],
     senha: [
-      { tipo: 'required', mensagem: 'O campo Senha é obrigatório.' },
+      { tipo: 'required', mensagem: 'O campo Senha é obrigatório' },
       { tipo: 'minlength', mensagem: 'A Senha deve ter pelo menos 6 caracteres.', },
       { tipo: 'maxlength', mensagem: 'A Senha deve ter no máximo 8 caractéres.' },
+    ],
+    confirmarSenha: [
+      { tipo: 'required', mensagem: 'É obrigatório confirmar a Senha.' },
+      { tipo: 'minlength', mensagem: 'A senha deve ter pelo menos 6 caracteres.', },
+      { tipo: 'maxlength', mensagem: 'A senha deve ter no máximo 8 caractéres.' },
+      { tipo: 'comparacao', mensagem: 'Deve ser igual a Senha.' },
     ],
   };
 
   constructor(private formBuilder: FormBuilder, private route: Router) {
-    this.formLogin = this.formBuilder.group({
+    this.formRegistro = this.formBuilder.group({
       nome: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      email:['', Validators.compose([Validators.required, Validators.email])],
       senha: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]],
+      confirmarSenha: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]]
     });
    }
 
   ngOnInit() {
   }
 
-  async entrar() {
-    if(this.formLogin.valid){
-      const loginEmail = this.formLogin.value.email;
-      const loginPassword = this.formLogin.value.senha;
-
-      const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-      console.log(userCredential.user);
+  async salvarRegistro() {
+    if(this.formRegistro.valid){
+      let nome = this.formRegistro.value.nome;
+      let email = this.formRegistro.value.email;
+      let senha = this.formRegistro.value.senha;
+      console.log(this.formRegistro)
     }else{
-      alert('Você ainda não possui um registro!');
+      alert('Formulário Inválido!');
     }
   }
-
 }
+
 
