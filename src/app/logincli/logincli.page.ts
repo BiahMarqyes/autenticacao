@@ -45,7 +45,7 @@ export class LogincliPage implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private route: Router) {
     this.formLogin = this.formBuilder.group({
-      nome: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      email:['', Validators.compose([Validators.required, Validators.email])],
       senha: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]],
     });
    }
@@ -53,17 +53,15 @@ export class LogincliPage implements OnInit {
   ngOnInit() {
   }
 
-  async entrar() {
-    if(this.formLogin.valid){
+  loginEmailPassword = async () => {
       const loginEmail = this.formLogin.value.email;
       const loginPassword = this.formLogin.value.senha;
 
       const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
       console.log(userCredential.user);
-    }else{
-      alert('Você ainda não possui um registro!');
-    }
   }
+
+
 
 }
 

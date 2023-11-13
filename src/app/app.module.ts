@@ -10,8 +10,6 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +24,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
         appId: "1:533716695287:web:4dc5e6dd6f9abbd8a73bf2",
         measurementId: "G-T2GBYFMZ5Q"
       }
-    ), AngularFireAuthModule, AngularFireDatabaseModule,],
+    ),],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
