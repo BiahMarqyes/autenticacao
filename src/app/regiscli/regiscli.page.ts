@@ -65,15 +65,28 @@ export class RegiscliPage implements OnInit {
   }
 
   async salvarRegistro() {
-    if(this.formRegistro.valid){
-      let nome = this.formRegistro.value.nome;
-      let email = this.formRegistro.value.email;
-      let senha = this.formRegistro.value.senha;
-      console.log(this.formRegistro)
-    }else{
-      alert('Formulário Inválido!');
+    const senha = this.formRegistro.value.senha;
+    const confirmarSenha = this.formRegistro.value.confirmarSenha;
+
+    if (senha === confirmarSenha) {
+
+      const email = this.formRegistro.value.email;
+      const password = this.formRegistro.value.senha;
+
+      try {
+        await createUserWithEmailAndPassword(auth, email, password)
+      }
+      catch(error) {
+        console.log(`There was an error: ${error}`);
+        alert('Erro! Talvez você já possua um registro.')
+      }
+
+    } else {
+      alert('A confirmação de senha não está correta!')
     }
+
   }
+
 }
 
 

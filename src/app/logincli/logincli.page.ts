@@ -57,11 +57,16 @@ export class LogincliPage implements OnInit {
       const loginEmail = this.formLogin.value.email;
       const loginPassword = this.formLogin.value.senha;
 
-      const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-      console.log(userCredential.user);
+      try{
+        const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
+        console.log(userCredential.user);
+        this.route.navigate(['tabs/tab1'])
+      }
+      catch(error) {
+        console.log(error);
+        alert('erro ao tentar fazer o login')
+      }
   }
-
-
 
 }
 

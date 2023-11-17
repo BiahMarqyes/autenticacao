@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'logincli',
     loadChildren: () => import('./logincli/logincli.module').then( m => m.LogincliPageModule)
+  },
+  {
+    path: 'regiscli',
+    loadChildren: () => import('./regiscli/regiscli.module').then( m => m.RegiscliPageModule)
   }
 ];
 @NgModule({
