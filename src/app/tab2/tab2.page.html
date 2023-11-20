@@ -1,17 +1,41 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      <h1 style="color: rgb(159, 216, 211);">Together</h1>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="fundo">
+    <div class="fundo2">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+      <ion-toolbar style="--background: #013440; margin-bottom: 3px;">
+        <ion-searchbar style="--background: #eaeff1; --border-radius: 100px;" placeholder="Pesquise por clínicas"></ion-searchbar>
+      </ion-toolbar>
+
+      <ion-item button [routerLink]="['/agendamento']" class="item">
+        <ion-avatar slot="start">
+          <img src="https://i.pinimg.com/1200x/23/11/6a/23116a08edade06f70892cb5e83f0e8e.jpg"/>
+        </ion-avatar>
+        <ion-label> Clínica Santa Helena </ion-label>
+      </ion-item>
+
+      <ion-item button [routerLink]="['/agendamento']" class="item">
+        <ion-avatar slot="start">
+          <img src="https://www.albanymedical.com.br/wp-content/uploads/2021/04/foto-clinica-di-fiori-pediatria05.jpg"/>
+        </ion-avatar>
+        <ion-label> Di Fiori Pediatria </ion-label>
+      </ion-item>
+
+      <ion-item button [routerLink]="['/agendamento']" class="item">
+        <ion-avatar slot="start">
+          <img src="https://clinicamedicacapoeiras.com.br/2020/wp-content/uploads/2020/04/consultas-1-300x300.png"/>
+        </ion-avatar>
+        <ion-label> Clínica 3 </ion-label>
+      </ion-item>
+
+
+    </div>
+  </div>
 </ion-content>
