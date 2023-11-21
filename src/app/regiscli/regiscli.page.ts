@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 
 import { app } from '../app.module';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, collection, addDoc, DocumentData } from "firebase/firestore";
+import { set } from 'firebase/database';
 
 const auth = getAuth(app);
 const firestore = getFirestore(app);
@@ -68,7 +69,12 @@ export class RegiscliPage implements OnInit {
         .then(data => {
           const uid = data.user.uid;
 
-          const users = firestore;
+          const users = collection(firestore, 'users');
+          users.doc(uid).set({
+            nome: this.formRegistro.value.nome,
+            email: this.formRegistro.value.email,
+          });
+          alert('Conta criada com sucesso!')
         })
       }
       catch(error) {
