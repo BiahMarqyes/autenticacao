@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { app } from '../app.module';
+import { getDatabase, set, ref } from "firebase/database";
 
 @Component({
   selector: 'app-agendamento',
@@ -7,10 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgendamentoPage implements OnInit {
 
-  constructor() { }
+  formMsg: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.formMsg = this.formBuilder.group({
+      mensagem: [''],
+    });
+  }
 
   ngOnInit() {
   }
+
+  async enviarMensagem() {
+    var mensagem = this.formMsg.value.mensagem;
+    const database = getDatabase(app);
+
+    set(ref(database, 'mensagem'), {
+      mensagem: mensagem
+    });
+
+    return false;
+}
 
 }
 

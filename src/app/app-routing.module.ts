@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'regiscli',
     loadChildren: () => import('./regiscli/regiscli.module').then( m => m.RegiscliPageModule)
+  },
+  {
+    path: 'agendamento',
+    loadChildren: () => import('./agendamento/agendamento.module').then( m => m.AgendamentoPageModule)
   }
 ];
 @NgModule({

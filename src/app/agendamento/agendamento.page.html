@@ -32,9 +32,11 @@
 <ion-footer>
   <ion-toolbar>
     <ion-item>
-      <ion-textarea class="input" placeholder="Mensagem">
-      </ion-textarea>
-      <ion-button><ion-icon name="chevron-forward-outline" style="font-size: 20px;"></ion-icon></ion-button>
+      <form [formGroup]="formMsg" onsubmit="return enviarMensagem();">
+        <ion-textarea formControlName="mensagem" id="mensagem" class="input" placeholder="Mensagem">
+        </ion-textarea>
+        <ion-button><ion-icon name="chevron-forward-outline" style="font-size: 20px;"></ion-icon></ion-button>
+      </form>
     </ion-item>
   </ion-toolbar>
 </ion-footer>
