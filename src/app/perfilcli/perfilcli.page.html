@@ -1,0 +1,91 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="--background: #013440;">
+    <ion-item class="cima">
+      <div button slot="start" [routerLink]="['/clinica']" style="margin: 0%;">
+        <ion-icon
+          name="arrow-back-outline"
+          style="color: rgb(255, 255, 255, 0.822); font-size: 22px"
+        ></ion-icon>
+      </div>
+      <ion-title>
+        <h3 style="color: rgb(255, 255, 255, 0.822);">Visualizar Perfil</h3>
+      </ion-title>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="fundo">
+    <div class="fundo2">
+      <div class="bola">
+
+        <div class="msg">
+          <p style="font-size: 16px; width: 90%; margin-left: 5%;">Esse é o seu perfil! Ele será exibido para outros usúarios</p>
+          <ion-button expand="block" [routerLink]="['/editarperfil']">
+            <ion-icon name="pencil-sharp" style="margin-right: 10px;"></ion-icon>Editar Perfil
+          </ion-button>
+        </div>
+
+          <img
+            src="https://i.pinimg.com/1200x/23/11/6a/23116a08edade06f70892cb5e83f0e8e.jpg"
+          />
+
+        <div class="nome">
+          <p>Clique no botão abaixo para mandar uma mensagem</p>
+        </div>
+      </div>
+
+      <ion-fab>
+        <ion-fab-button>
+          <ion-icon name="chatbubbles" id="present-alert"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+      <ion-alert
+        trigger="present-alert"
+        class="alert"
+        header="Vizualização de Perfil"
+        message="Esta função funciona apenas para os usuários que vizitarem seu perfil"
+        [buttons]="alertButtons"
+      ></ion-alert>
+
+        <ion-card style="margin-top: 162%;">
+          <ion-card-header>
+            <ion-card-title style="color: #013440;">Clínica Santa Helena</ion-card-title>
+            <ion-card-subtitle>Conheça nossa equipe e nosso diferencial</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+          <ion-card-header>
+          <ion-card-title style="color: #013440;">
+            <h4>Horários:</h4>
+          </ion-card-title>
+        </ion-card-header>
+          <ion-card-content>
+            <p></p>
+            <p></p>
+          </ion-card-content>
+
+          <ion-card-header>
+            <ion-card-title style="color: #013440;">
+              <h4>Endereço:</h4>
+            </ion-card-title>
+          </ion-card-header>
+            <ion-card-content>
+              <p></p>
+              <p></p>
+            </ion-card-content>
+        </ion-card>
+
+        <br>
+
+    </div>
+  </div>
+</ion-content>
+
+
+

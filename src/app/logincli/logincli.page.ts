@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { app } from '../app.module';
 import { getDatabase, set, ref } from "firebase/database";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 const db = getDatabase();
 const auth = getAuth(app);
@@ -56,6 +56,19 @@ export class LogincliPage implements OnInit {
         alert('erro ao tentar fazer o login')
       }
   }
+
+  logout = async () => {
+    try {
+      await signOut(auth);
+
+      alert('Voce saiu da sua conta');
+    } catch (error) {
+      console.error(error);
+      alert('Erro ao tentar fazer logout');
+    }
+  }
+
+
 
 }
 

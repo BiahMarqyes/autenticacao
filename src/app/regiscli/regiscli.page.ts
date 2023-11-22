@@ -4,8 +4,7 @@ import { Router } from '@angular/router';
 
 import { app } from '../app.module';
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { getFirestore, collection, addDoc, DocumentData } from "firebase/firestore";
-import { set } from 'firebase/database';
+import { getFirestore, collection, setDoc, doc } from "firebase/firestore";
 
 const auth = getAuth(app);
 const firestore = getFirestore(app);
@@ -70,11 +69,21 @@ export class RegiscliPage implements OnInit {
           const uid = data.user.uid;
 
           const users = collection(firestore, 'users');
-          users.doc(uid).set({
-            nome: this.formRegistro.value.nome,
-            email: this.formRegistro.value.email,
+
+          const userDoc = doc(users, uid);
+
+          setDoc(userDoc, {
+            nome: nome,
+            email: email,
+          })
+
+          .then(() => {
+            console.log("Dados do usuário adicionados com sucesso!");
+          })
+          .catch((error) => {
+            console.error("Erro ao adicionar dados do usuário:", error);
           });
-          alert('Conta criada com sucesso!')
+
         })
       }
       catch(error) {
@@ -89,5 +98,6 @@ export class RegiscliPage implements OnInit {
   }
 
 }
+
 
 

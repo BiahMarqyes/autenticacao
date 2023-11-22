@@ -17,6 +17,14 @@ const routes: Routes = [
   {
     path: 'agendamento',
     loadChildren: () => import('./agendamento/agendamento.module').then( m => m.AgendamentoPageModule)
+  },
+  {
+    path: 'editarperfil',
+    loadChildren: () => import('./editarperfil/editarperfil.module').then( m => m.EditarperfilPageModule)
+  },
+  {
+    path: 'perfilcli',
+    loadChildren: () => import('./perfilcli/perfilcli.module').then( m => m.PerfilcliPageModule)
   }
 ];
 @NgModule({

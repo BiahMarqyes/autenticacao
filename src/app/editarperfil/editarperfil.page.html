@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="--background: #6B95A3;">
+    <ion-item class="cima">
+      <div button slot="start" [routerLink]="['/perfilcli']" style="margin: 0%;">
+        <ion-icon
+          name="arrow-back-outline"
+          style="color: rgb(255, 255, 255, 0.822); font-size: 22px"
+        ></ion-icon>
+      </div>
+      <ion-title>
+        <h3 style="color: rgb(255, 255, 255, 0.822);">Editar Perfil</h3>
+      </ion-title>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="fundo">
+    <div class="fundo2">
+
+      <fieldset>
+        <legend>FOTO DE PERFIL</legend>
+      </fieldset>
+
+      <img src="https://i.pinimg.com/1200x/23/11/6a/23116a08edade06f70892cb5e83f0e8e.jpg"/>
+
+      <ion-button expand="full" [routerLink]="['/editarperfil']">
+        <ion-icon name="pencil-sharp" style="margin-right: 10px;"></ion-icon>EDITAR
+      </ion-button>
+
+      <br>
+
+      <fieldset>
+        <legend>LOCALIZAÇÃO</legend>
+      </fieldset>
+
+      <form [formGroup]="formInformacoes">
+
+      <div class="infos">
+            <ion-item style="--background: #eaeff1;">
+              <ion-input formControlName="rua" name="rua" type="text" label="Rua:" placeholder="digite o nome da rua"></ion-input>
+            </ion-item>
+
+            <ion-item style="--background: #eaeff1;">
+              <ion-input formControlName="numero" name="numero" type="text" label="Número:" type="number" placeholder="digite o número"></ion-input>
+            </ion-item>
+
+            <ion-item style="--background: #eaeff1;">
+              <ion-input formControlName="bairro" name="bairro" type="text" label="Bairro:" placeholder="digite o nome do bairro"></ion-input>
+            </ion-item>
+      </div>
+
+      <br>
+
+      <fieldset>
+        <legend>HORÁRIOS</legend>
+      </fieldset>
+
+      <div class="infos">
+        <ion-item style="--background: #eaeff1;">
+          <ion-textarea formControlName="horario" name="horario" type="text" label="Horário de Atendimento:" labelPlacement="stacked" placeholder="digite seus horários de atendimento"></ion-textarea>
+        </ion-item>
+      </div>
+
+      <br>
+
+      <fieldset>
+        <legend>SOBRE</legend>
+      </fieldset>
+
+      <div class="infos">
+        <ion-item style="--background: #eaeff1;">
+          <ion-textarea formControlName="sobre" name="sobre" type="text" [autoGrow]="true" label="Sobre a clínica:" labelPlacement="floating" placeholder="escreva um texto para representar sua clínica"></ion-textarea>
+        </ion-item>
+      </div>
+
+      <ion-button style="margin-top: 8%; --background: #013440; --color: #eaeff1f8;" shape="round" (click)="salvarInformacoes()">SALVAR</ion-button>
+
+    </form>
+
+      <br>
+
+    </div>
+  </div>
+</ion-content>
+
+
