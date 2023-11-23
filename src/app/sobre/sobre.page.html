@@ -1,14 +1,14 @@
 <ion-header [translucent]="true">
-  <ion-toolbar style="--background: #013440;">
+  <ion-toolbar style="--background: #3B7D8C;">
     <ion-item class="cima">
-      <div button slot="start" [routerLink]="['/clinica']" style="margin: 0%;">
+      <div button slot="start" [routerLink]="['/tabs/tab1']" style="margin: 0%;">
         <ion-icon
           name="arrow-back-outline"
           style="color: rgb(255, 255, 255, 0.822); font-size: 22px"
         ></ion-icon>
       </div>
       <ion-title>
-        <h3 style="color: rgb(255, 255, 255, 0.822);">Visualizar Perfil</h3>
+        <h3 style="color: rgb(255, 255, 255, 0.822)">Clínica Santa Helena</h3>
       </ion-title>
     </ion-item>
   </ion-toolbar>
@@ -18,13 +18,6 @@
   <div class="fundo">
     <div class="fundo2">
       <div class="bola">
-
-        <div class="msg">
-          <p style="font-size: 16px; width: 90%; margin-left: 5%;">Esse é o seu perfil! Ele será exibido para outros usúarios</p>
-          <ion-button expand="block" [routerLink]="['/editarperfil']">
-            <ion-icon name="pencil-sharp" style="margin-right: 10px;"></ion-icon>Editar Perfil
-          </ion-button>
-        </div>
 
           <img
             src="https://i.pinimg.com/1200x/23/11/6a/23116a08edade06f70892cb5e83f0e8e.jpg"
@@ -36,26 +29,22 @@
       </div>
 
       <ion-fab>
-        <ion-fab-button>
-          <ion-icon name="chatbubbles" id="present-alert"></ion-icon>
+        <ion-fab-button [routerLink]="['/agendamento']">
+          <ion-icon name="chatbubbles"></ion-icon>
         </ion-fab-button>
       </ion-fab>
-      <ion-alert
-        trigger="present-alert"
-        class="alert"
-        header="Vizualização de Perfil"
-        message="Esta função funciona apenas para os usuários que vizitarem seu perfil"
-        [buttons]="alertButtons"
-      ></ion-alert>
 
-        <ion-card style="margin-top: 162%;">
+        <ion-card style="margin-top: 135%;">
           <ion-card-header>
             <ion-card-title style="color: #013440;">Clínica Santa Helena</ion-card-title>
             <ion-card-subtitle>Conheça nossa equipe e nosso diferencial</ion-card-subtitle>
           </ion-card-header>
 
           <ion-card-content>
-            <div id="idsobre"></div>
+            A clínica é pensada no atendimento para todas as idades, incluindo crianças e idosos.
+            Sendo referencia no mercado, já recebeu famosos como Ivete Sangalo e Faustão.
+            Nossos profissionais tem estudo internacional e amam o seu trabalho, o que proporciona
+            responsabilidade, comprometimento e qualidade no serviço.
           </ion-card-content>
         </ion-card>
 
@@ -66,7 +55,8 @@
           </ion-card-title>
         </ion-card-header>
           <ion-card-content>
-            <div id="idhorario"></div>
+            <p>Das 9h ás 18h de segunda á sexta</p>
+            <p>Das 8h ás 12h aos sábados</p>
           </ion-card-content>
 
           <ion-card-header>
@@ -75,12 +65,10 @@
             </ion-card-title>
           </ion-card-header>
             <ion-card-content>
-              <div id="idendereco"></div>
+              <p>Rua Corenel Cintra Franco 125</p>
+              <p>Avenida Brasil</p>
             </ion-card-content>
         </ion-card>
-
-        <ion-button expand="block" (click)="atualizar()" style="margin-top: 5%; margin-left: 6%; margin-right: 6%;">Atualizar
-        </ion-button>
 
         <br>
 

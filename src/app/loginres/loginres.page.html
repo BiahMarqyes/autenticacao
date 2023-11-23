@@ -1,0 +1,35 @@
+<ion-content [fullscreen]="true">
+<div class="fundo">
+  <div class="fundo2">
+    <div class="bola">
+      <img src="assets/together.jpeg">
+      <div class="bemvindo">
+        <h3>Paciente</h3>
+      </div>
+    </div>
+    <div class="campos">
+      <form [formGroup]="formLogin">
+        <div class="inputs">
+          <div class="icone"><ion-icon name="person" style="margin-top: 65%; color: #013440;"></ion-icon></div>
+          <ion-input  formControlName="nome" label="Nome de Usuário:" label-placement="floating" type="text" name="nome"></ion-input>
+        </div>
+        <br>
+        <div class="inputs">
+          <div class="icone"><ion-icon name="lock-closed" style="margin-top: 65%; color: #013440;"></ion-icon></div>
+          <ion-input  formControlName="senha" label="Senha:" label-placement="floating" type="password" name="senha"></ion-input>
+        </div>
+        <br>
+        <br>
+        <ion-button [routerLink]="['/tabs/tab2']" shape="round">Entrar</ion-button>
+      </form>
+      <br>
+      <br>
+      <div class="registro">
+        <p>Não tem uma conta?<br>Crie aqui:</p>
+        <br>
+        <ion-button shape="round" [routerLink]="['/regisres']">Registrar</ion-button>
+      </div>
+    </div>
+  </div>
+</div>
+</ion-content>

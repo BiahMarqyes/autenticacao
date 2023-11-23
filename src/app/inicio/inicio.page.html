@@ -1,0 +1,18 @@
+<ion-content [fullscreen]="true">
+<div class="fundo">
+  <div class="fundo2">
+    <div class="bola">
+      <img src="assets/logo.jpeg">
+      <div class="bemvindo">
+        <h1>Bem-Vindo</h1>
+        <p>O aplicativo que te ajuda a encontra a clínica perfeita</p>
+      </div>
+    </div>
+    <div class="logar">
+      <p>Logar como:</p>
+      <ion-button shape="round" [routerLink]="['/logincli']"><ion-icon name="storefront" style="margin-right: 15px;"></ion-icon>Clínica</ion-button>
+      <ion-button shape="round" [routerLink]="['/loginres']"><ion-icon name="person" style="margin-right: 15px;"></ion-icon>Paciente</ion-button>
+    </div>
+  </div>
+</div>
+</ion-content>

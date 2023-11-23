@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.fundo{
+  background-color: #226473;
+  width: 100%;
+  height: 100%;
+}
+
+.fundo2{
+  background-color: #226473;
+  width: auto;
+  height: auto;
+}
+
+.bola{
+  top: -25%;
+  background-color: #fff;
+  width: 160%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -30%;
+}
+
+img{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 55%;
+  position: absolute;
+}
+
+.bemvindo{
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: black;
+  text-align: center;
+  font-family: 'Roboto Slab', serif;
+}
+
+.logar{
+  position: absolute;
+  bottom: 5%;
+  text-align: center;
+  left: 5%;
+  right: 5%;
+  width: 90%;
+  font-family: 'Roboto Slab', serif;
+  color: #fff;
+}
+
+ion-button {
+  --background: #fff;
+  width: 60%;
+  color: #013440;
+  font-family: 'Roboto Slab', serif;
+}

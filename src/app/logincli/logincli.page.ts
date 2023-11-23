@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 import { app } from '../app.module';
 import { getDatabase, set, ref } from "firebase/database";
-import { getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 
 const db = getDatabase();
 const auth = getAuth(app);

@@ -7,7 +7,7 @@ import {
   doc,
   getDoc,
 } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 const auth = getAuth(app);
 
@@ -23,7 +23,15 @@ export class PerfilcliPage implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  async ngOnInit() {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        this.atualizar();
+      } else {
+        console.log('Usuário não autenticado!');
+      }
+    });
+  }
 
   async atualizar() {
     const user = auth.currentUser;
@@ -85,5 +93,4 @@ export class PerfilcliPage implements OnInit {
       console.log('Usuário não autenticado.');
     }
   }
-
 }

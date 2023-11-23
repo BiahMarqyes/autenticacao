@@ -1,0 +1,85 @@
+.fundo{
+  background-color: #013440;
+  width: auto;
+  height: 100%;
+  padding-top: 2%;
+}
+
+.fundo2{
+  background-color: #013440;
+  width: auto;
+  height: auto;
+}
+
+ion-title{
+  font-family: Serif;
+}
+
+.cima{
+  --background:#3B7D8C;
+  background-color: #000;
+  color: #fff;
+}
+
+.nome{
+  text-align: center;
+  width: 30%;
+  margin: 3%;
+  margin-top: 5%;
+  position: absolute;
+  top: 88%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  color: rgb(218, 202, 202);
+  font-family: 'Roboto Slab', serif;
+}
+
+.bola{
+  top: -35%;
+  background-color: #6B95A3;
+  width: 200%;
+  height: 95%;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -50%;
+}
+
+img{
+  top: 67%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 46%;
+  height: 40%;
+  position: absolute;
+  border-radius: 10%;
+}
+
+ion-fab-button{
+  --background: #eaeff1;
+  --color: #013440;
+}
+
+ion-fab{
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  margin: 0 0 0 -25px;
+}
+
+ion-card{
+  margin-left: 5%;
+  width: 90%;
+  border-radius: 20px;
+  padding: 1%;
+  background-color: #eaeff1fa;
+  color: #013440;
+}
+
+
+
+
+
+
+
+
+

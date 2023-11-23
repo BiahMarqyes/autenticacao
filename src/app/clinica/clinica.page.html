@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <h1 style="color: rgb(159, 216, 211);">Together</h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="fundo">
+    <div class="fundo2">
+
+      <ion-item button [routerLink]="['/perfilcli']" class="perfil">
+        <ion-avatar slot="start">
+          <img src="https://i.pinimg.com/1200x/23/11/6a/23116a08edade06f70892cb5e83f0e8e.jpg"/>
+        </ion-avatar>
+        <ion-label>
+        <h2>Clínica Santa Helena</h2>
+        <p>acesse e edite seu perfil aqui</p>
+      </ion-label>
+      <ion-icon name="pencil-sharp" slot="end"></ion-icon>
+      </ion-item>
+
+      <ion-toolbar style="--background: #013440; margin-bottom: 3px;">
+        <ion-searchbar style="--background: #eaeff1; --border-radius: 100px;" placeholder="Pesquise por pacientes"></ion-searchbar>
+      </ion-toolbar>
+
+      <ion-item button [routerLink]="['/chatcli']" class="item">
+        <ion-avatar slot="start">
+          <img src="https://a.imagem.app/okpOUa.jpeg"/>
+        </ion-avatar>
+        <ion-label> Paciente 1 </ion-label>
+      </ion-item>
+
+      <ion-item button [routerLink]="['/chatcli']" class="item">
+        <ion-avatar slot="start">
+          <img src="https://a.imagem.app/oz8AgV.jpeg"/>
+        </ion-avatar>
+        <ion-label> Paciente 2 </ion-label>
+      </ion-item>
+
+      <ion-item button [routerLink]="['/chatcli']" class="item">
+        <ion-avatar slot="start">
+          <img src="https://a.imagem.app/oz8BIm.jpeg"/>
+        </ion-avatar>
+        <ion-label> Paciente 3 </ion-label>
+      </ion-item>
+
+      <ion-item button [routerLink]="['/chatcli']" class="item">
+        <ion-avatar slot="start">
+          <img src="https://ionicframework.com/docs/img/demos/avatar.svg"/>
+        </ion-avatar>
+        <ion-label> Paciente 4 </ion-label>
+      </ion-item>
+
+    </div>
+  </div>
+</ion-content>
