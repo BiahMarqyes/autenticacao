@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+import { app } from '../app.module';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getFirestore, collection, setDoc, doc } from "firebase/firestore";
+
+const auth = getAuth(app);
+const firestore = getFirestore(app);
+
 @Component({
   selector: 'app-regisres',
   templateUrl: './regisres.page.html',
@@ -46,14 +53,48 @@ export class RegisresPage implements OnInit {
   }
 
   async salvarRegistro() {
-    if(this.formRegistro.valid){
-      let nome = this.formRegistro.value.nome;
-      let email = this.formRegistro.value.email;
-      let senha = this.formRegistro.value.senha;
-      console.log(this.formRegistro)
-    }else{
-      alert('Formulário Inválido!');
+    const senha = this.formRegistro.value.senha;
+    const confirmarSenha = this.formRegistro.value.confirmarSenha;
+
+    if (senha === confirmarSenha) {
+
+      const nome = this.formRegistro.value.nome;
+      const email = this.formRegistro.value.email;
+      const password = this.formRegistro.value.senha;
+
+      try {
+        await createUserWithEmailAndPassword(auth, email, password)
+        .then(data => {
+          const uid = data.user.uid;
+
+          const pacientes = collection(firestore, 'pacientes');
+
+          const userDoc = doc(pacientes, uid);
+
+          setDoc(userDoc, {
+            nome: nome,
+            email: email,
+          })
+
+          .then(() => {
+            console.log("Dados do usuário adicionados com sucesso!");
+            alert('Conta criada com sucesso!! Volte para fazer o login.')
+          })
+          .catch((error) => {
+            console.error("Erro ao adicionar dados do usuário:", error);
+          });
+
+        })
+      }
+      catch(error) {
+        console.log(`There was an error: ${error}`);
+        alert('Erro! Talvez você já possua um registro.')
+      }
+
+    } else {
+      alert('A confirmação de senha não está correta!')
     }
+
   }
 
 }

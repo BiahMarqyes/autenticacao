@@ -1,0 +1,60 @@
+.fundo{
+  background: #94b1bb;
+  background-repeat: repeat;
+  background-size: cover;
+  opacity: 0.9;
+  height: 100%;
+  width: 100%;
+  padding-top: 2%;
+}
+
+.cima{
+  --background: #021d24;
+  color: #fff;
+}
+
+.voltar {
+  --background: #ffffff00;
+  margin-right: 3%;
+}
+
+ion-button {
+  width: 45px;
+  height: 40px;
+  --border-radius: 100%;
+  --background: #d9e6e9;
+  --color: #7791db;
+}
+
+ion-textarea{
+  width: 100%;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.555);
+  color: rgb(0, 0, 0);
+  display: flex;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-right: 2%;
+  height: auto;
+  padding-left: 8%;
+  padding-right: 8%;
+  --padding-end: 2px;
+}
+
+.eu{
+  width: 70%;
+  margin-left: 27%;
+  height: auto;
+}
+
+.outro{
+  width: 70%;
+  background: #6B95A3;
+  color: #000000;
+}
+
+ion-item{
+  --background: #021d24;
+  background-color: #9c5b55;
+}
+

@@ -62,13 +62,13 @@ export class PerfilcliPage implements OnInit {
         }
         let displayEndereco = '';
         if (docData.rua) {
-          displayEndereco += `<p>${docData.rua}</p>`;
+          displayEndereco += `<p><strong>Rua: </strong>${docData.rua}</p>`;
         }
         if (docData.numero) {
-          displayEndereco += `<p>${docData.numero}</p>`;
+          displayEndereco += `<p><strong>Número: </strong>${docData.numero}</p>`;
         }
         if (docData.bairro) {
-          displayEndereco += `<p>${docData.bairro}</p>`;
+          displayEndereco += `<p><strong>Bairro: </strong>${docData.bairro}</p>`;
         }
 
         if (divSobre) {

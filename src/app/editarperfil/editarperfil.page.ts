@@ -78,7 +78,7 @@ export class EditarperfilPage implements OnInit {
 
         .then(() => {
           console.log("Dados do usuário adicionados com sucesso!");
-          alert('Dados atualizados!!')
+          this.route.navigate(['perfilcli'])
         })
         .catch((error) => {
           console.error("Erro ao adicionar dados do usuário:", error);

@@ -45,6 +45,10 @@ const routes: Routes = [
   {
     path: 'editarperfil',
     loadChildren: () => import('./editarperfil/editarperfil.module').then( m => m.EditarperfilPageModule)
+  },
+  {
+    path: 'chatcli',
+    loadChildren: () => import('./chatcli/chatcli.module').then( m => m.ChatcliPageModule)
   }
 ];
 @NgModule({
@@ -54,3 +58,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+

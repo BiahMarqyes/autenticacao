@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-item class="cima">
+      <div class="voltar" button slot="start" [routerLink]="['/clinica']">
+        <ion-icon name="arrow-back-outline" style="color: rgb(255, 255, 255); font-size: 22px;"></ion-icon>
+      </div>
+      <ion-avatar slot="start">
+        <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label> Paciente 4 </ion-label>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="fundo">
+    <ion-card class="eu">
+      <ion-card-content>
+        oi, tudo bem ?
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="outro">
+      <ion-card-content>
+        oi, tudo bem ?
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-item>
+      <ion-textarea [autoGrow]="true" placeholder="Mensagem"></ion-textarea>
+      <ion-button><ion-icon name="chevron-forward-outline" style="font-size: 20px;"></ion-icon></ion-button>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>
+

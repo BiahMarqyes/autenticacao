@@ -15,7 +15,6 @@ const auth = getAuth(app);
   styleUrls: ['./logincli.page.scss'],
 })
 
-
 export class LogincliPage implements OnInit {
 
   formLogin: FormGroup;
@@ -49,7 +48,7 @@ export class LogincliPage implements OnInit {
       try{
         const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
         console.log(userCredential.user);
-        this.route.navigate(['tabs/tab1'])
+        this.route.navigate(['clinica'])
       }
       catch(error) {
         console.log(error);
@@ -67,8 +66,6 @@ export class LogincliPage implements OnInit {
       alert('Erro ao tentar fazer logout');
     }
   }
-
-
 
 }
 

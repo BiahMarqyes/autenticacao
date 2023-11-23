@@ -79,6 +79,7 @@ export class RegiscliPage implements OnInit {
 
           .then(() => {
             console.log("Dados do usuário adicionados com sucesso!");
+            alert('Conta criada com sucesso!! Volte para fazer o login.')
           })
           .catch((error) => {
             console.error("Erro ao adicionar dados do usuário:", error);
