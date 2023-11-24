@@ -57,8 +57,8 @@ export class Tab3Page {
           displayNome += `<h2>${docData.nome}</h2>`;
         }
         let displayEmail = '';
-        if (docData.nome) {
-          displayNome += `<h2>${docData.email}</h2>`;
+        if (docData.email) {
+          displayEmail += `<h2>${docData.email}</h2>`;
         }
 
         if (divNome) {

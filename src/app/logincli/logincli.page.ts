@@ -52,7 +52,7 @@ export class LogincliPage implements OnInit {
       }
       catch(error) {
         console.log(error);
-        alert('erro ao tentar fazer o login')
+        alert('Você não possui uma conta registrada!')
       }
   }
 

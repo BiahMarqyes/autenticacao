@@ -52,7 +52,7 @@ export class ClinicaPage implements OnInit {
 
         let displayNome = '';
         if (docData.nome) {
-          displayNome += `<h2>${docData.nome}</h2>`;
+          displayNome += `<h1>${docData.nome}</h1>`;
         }
 
         if (divNome) {
