@@ -45,13 +45,18 @@ export class PerfilcliPage implements OnInit {
 
       const docSnapshot = await getDoc(userDoc);
 
+      var divNome = document.getElementById('idnome');
       var divSobre = document.getElementById('idsobre');
       var divHorario = document.getElementById('idhorario');
       var divEndereco = document.getElementById('idendereco');
 
       if (docSnapshot.exists()) {
-        const docData = docSnapshot.data() as { sobre?: string, horario?: string, rua?: string, numero?: string, bairro?: string };
+        const docData = docSnapshot.data() as { nome?: string, sobre?: string, horario?: string, rua?: string, numero?: string, bairro?: string };
 
+        let displayNome = '';
+        if (docData.nome) {
+          displayNome += `<h3>${docData.nome}</h3>`;
+        }
         let displaySobre = '';
         if (docData.sobre) {
           displaySobre += `<p>${docData.sobre}</p>`;
@@ -71,6 +76,11 @@ export class PerfilcliPage implements OnInit {
           displayEndereco += `<p><strong>Bairro: </strong>${docData.bairro}</p>`;
         }
 
+        if (divNome) {
+          divNome.innerHTML = displayNome;
+        } else {
+          console.error('Informação "nome" não encontrada');
+        }
         if (divSobre) {
           divSobre.innerHTML = displaySobre;
         } else {
