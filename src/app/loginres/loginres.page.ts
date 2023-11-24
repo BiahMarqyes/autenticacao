@@ -49,7 +49,7 @@ export class LoginresPage implements OnInit {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
       console.log(userCredential.user);
-      this.route.navigate(['tabs/tab1'])
+      this.route.navigate(['tabs/tab3'])
     }
     catch (error) {
       console.log(error);
